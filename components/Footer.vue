@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-green-50 shadow">
+  <div class="bg-green-50">
     <div class="w-4/5 mx-auto py-4 flex">
       <div class="flex-1">All rights reserved. &copy; 2021</div>
       <div class="flex-1 text-right">
