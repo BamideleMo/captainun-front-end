@@ -1,10 +1,10 @@
 <template>
-  <div class="bg-green-50">
-    <div class="w-4/5 mx-auto py-4 flex">
-      <div class="flex-1">All rights reserved. &copy; 2021</div>
-      <div class="flex-1 text-right">
-        <div class="text-sm"><i>Powered by</i></div>
-        <div class="text-right">
+  <div class="bg-green-50 text-base text-center py-12 md:text-base">
+    <div class="w-4/5 mx-auto py-4 flex-none md:flex">
+      <div class="md:flex-1 flex-none">All rights reserved. &copy; 2021</div>
+      <div class="md:flex-1 flex-none md:text-right">
+        <div class="my-2">Powered by</div>
+        <div class="md:text-right">
           <img class="h-16 inline" src="~/assets/undp-2.jpg" />
           <img class="h-16 inline" src="~/assets/unicef-logo.png" />
         </div>

@@ -1,9 +1,13 @@
 <template>
   <div class="bg-green-50">
     <Caption />
-    <div class="w-4/5 mx-auto py-16 lg:flex">
-      <Map />
-      <SortForm />
+    <div class="w-full md:w-11/12 lg:w-4/5 mx-auto py-0 lg:py-16 lg:flex">
+      <div class="w-full lg:w-4/5 lg:mr-10">
+        <Map />
+      </div>
+      <div class="w-full lg:w-1/5">
+        <SortForm />
+      </div>
     </div>
   </div>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full lg:w-4/5 mr-10">
+  <div class="w-full">
     <svg
       version="1.2"
       viewbox="0 0 2000 857"

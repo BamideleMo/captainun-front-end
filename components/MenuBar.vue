@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div class="shadow bg-green-50 border-b border-green-100">
+    <div class="shadow bg-green-50 border-b border-gray-400">
       <div class="w-11/12 md:w-4/5 mx-auto pt-2 pb-3">
         <div class="flex">
-          <div class="w-1/4 text-3xl md:text-4xl font-black pt-1 md:pt-0">
+          <div class="w-1/4 text-3xl md:text-4xl font-black">
             <a href="https://captainun.org">
               <span class="text-green-600">CAPTAIN</span>
             </a>
