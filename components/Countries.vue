@@ -1,5 +1,18 @@
 <template>
-  <span>
+  <select
+    class="
+      bg-white
+      border
+      shadow
+      w-full
+      rounded-lg
+      h-10
+      p-2
+      text-gray-700
+      focus:outline-none
+    "
+  >
+    <option value="" disabled selected>Country</option>
     <option value="Afganistan">Afghanistan</option>
     <option value="Albania">Albania</option>
     <option value="Algeria">Algeria</option>
@@ -245,8 +258,8 @@
     <option value="Yemen">Yemen</option>
     <option value="Zaire">Zaire</option>
     <option value="Zambia">Zambia</option>
-    <option value="Zimbabwe">Zimbabwe</option></span
-  >
+    <option value="Zimbabwe">Zimbabwe</option>
+  </select>
 </template>
 
 <script>

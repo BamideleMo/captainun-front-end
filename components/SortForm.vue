@@ -1,39 +1,23 @@
 <template>
-  <div class="w-10/12 lg:w-full mx-auto">
+  <div class="w-7/12 lg:w-full mx-auto">
     <form class="mt-6 text-xs">
       <div class="">
-        <div class="w-1/2 float-left lg:w-full lg:float-none">
-          <select
-            class="
-              bg-white
-              w-11/12
-              lg:w-full
-              rounded-lg
-              border-2 border-blue-200
-              text-blue-300
-              h-10
-              px-1
-              focus:outline-none
-              mb-4
-            "
-          >
-            <option value="" disabled selected>Country</option>
-            <Countries />
-          </select>
+        <div class="w-full">
+          <Countries />
         </div>
-        <div class="w-1/2 text-right float-right lg:w-full lg:float-none">
+        <div class="w-full">
           <select
             class="
-              lg:w-full
+              mt-3
               bg-white
-              w-11/12
+              border
+              shadow
+              w-full
               rounded-lg
-              border-2 border-blue-200
-              text-blue-300
               h-10
-              px-1
+              p-2
+              text-gray-700
               focus:outline-none
-              mb-4
             "
           >
             <option>State/Province</option>
@@ -41,39 +25,39 @@
           </select>
         </div>
       </div>
-      <div class="clear-both">
-        <div class="w-1/2 float-left lg:w-full lg:float-none">
+      <div class="">
+        <div class="w-full">
           <select
             class="
+              mt-3
               bg-white
-              w-11/12
-              lg:w-full
+              border
+              shadow
+              w-full
               rounded-lg
-              border-2 border-blue-200
-              text-blue-300
               h-10
-              px-1
+              p-2
+              text-gray-700
               focus:outline-none
-              mb-4
             "
           >
-            <option>City/Municipality</option>
+            <option>Select City/Municipality</option>
             <option>-</option>
           </select>
         </div>
-        <div class="w-1/2 text-right float-right lg:w-full lg:float-none">
+        <div class="w-full">
           <select
             class="
+              mt-3
               bg-white
-              w-11/12
-              lg:w-full
+              border
+              shadow
+              w-full
               rounded-lg
-              border-2 border-blue-200
-              text-blue-300
               h-10
-              px-1
+              p-2
+              text-gray-700
               focus:outline-none
-              mb-4
             "
           >
             <option>Corporation</option>
@@ -85,6 +69,7 @@
       <div>
         <button
           class="
+            mt-3
             bg-blue-200
             w-full
             h-10

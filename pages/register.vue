@@ -74,22 +74,8 @@
               Country of Residence:
             </div>
             <div class="mt-1">
-              <select
-                class="
-                  bg-white
-                  border
-                  shadow
-                  w-full
-                  rounded-lg
-                  h-10
-                  p-2
-                  text-gray-700
-                  focus:outline-none
-                "
-              >
-                <option value="" disabled selected>Select Option</option>
+              
                 <Countries />
-              </select>
             </div>
           </div>
           <div class="mb-4">
