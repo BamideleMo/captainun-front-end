@@ -1,5 +1,6 @@
 <template>
   <div class="bg-green-50">
+    <Caption />
     <div class="w-4/5 mx-auto py-16 flex">
       <Map />
       <SortForm />

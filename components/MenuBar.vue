@@ -4,10 +4,10 @@
       <div class="w-4/5 mx-auto pt-2 pb-3">
         <div class="flex">
           <div class="w-1/4 text-4xl font-black">
-            <NuxtLink to="/">
+            <a href="#">
               <span class="text-green-600">CAPTAIN</span>
               <!-- <span class="text-blue-600">UN</span> -->
-            </NuxtLink>
+            </a>
           </div>
           <div class="w-3/4 text-right">
             <div class="dropdown">
@@ -53,7 +53,6 @@
         </div>
       </div>
     </div>
-    <Caption />
   </div>
 </template>
 
