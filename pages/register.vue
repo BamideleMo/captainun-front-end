@@ -9,7 +9,7 @@
           </p>
         </div>
         <form class="rounded-lg bg-gray-100 py-8 px-3 lg:px-6 mt-8">
-          <div class="mb-4">
+          <div class="mb-6">
             <div class="text-md text-gray-800 font-bold">Fullname:</div>
             <div class="mt-1">
               <input
@@ -28,7 +28,7 @@
               />
             </div>
           </div>
-          <div class="mb-4">
+          <div class="mb-6">
             <div class="text-md text-gray-800 font-bold">Email:</div>
             <div class="mt-1">
               <input
@@ -47,7 +47,7 @@
               />
             </div>
           </div>
-          <div class="mb-4">
+          <div class="mb-6">
             <div class="text-md text-gray-800 font-bold">Volunteer Group:</div>
             <div class="mt-1">
               <select
@@ -63,22 +63,21 @@
                   focus:outline-none
                 "
               >
-                <option value="" disabled selected>Select Option</option>
+                <option value="" disabled selected>Group</option>
                 <option value="level3">Volunteers</option>
                 <option value="level2">Climate Backstops</option>
               </select>
             </div>
           </div>
-          <div class="mb-4">
+          <div class="mb-6">
             <div class="text-md text-gray-800 font-bold">
               Country of Residence:
             </div>
             <div class="mt-1">
-              
-                <Countries />
+              <Countries />
             </div>
           </div>
-          <div class="mb-4">
+          <div class="mb-6">
             <div class="text-md text-gray-800 font-bold">Username:</div>
             <div class="mt-1">
               <input
@@ -97,7 +96,7 @@
               />
             </div>
           </div>
-          <div class="mb-4">
+          <div class="mb-6">
             <div class="text-md text-gray-800 font-bold">Password:</div>
             <div class="mt-1 flex">
               <input
@@ -127,7 +126,7 @@
               </div>
             </div>
           </div>
-          <div class="mb-4">
+          <div class="mb-6">
             <div class="text-md text-gray-800 font-bold">Confirm Password:</div>
             <div class="mt-1 flex">
               <input

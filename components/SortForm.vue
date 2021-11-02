@@ -41,7 +41,7 @@
               focus:outline-none
             "
           >
-            <option>Select City/Municipality</option>
+            <option>City/Municipality</option>
             <option>-</option>
           </select>
         </div>

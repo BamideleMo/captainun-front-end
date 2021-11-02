@@ -9,7 +9,7 @@
           </p>
         </div>
         <form class="rounded-lg bg-gray-100 py-8 px-3 lg:px-6 mt-8">
-          <div class="mb-4">
+          <div class="mb-6">
             <div class="text-md text-gray-800 font-bold">Username:</div>
             <div class="mt-1">
               <input
@@ -28,7 +28,7 @@
               />
             </div>
           </div>
-          <div class="mb-4">
+          <div class="mb-6">
             <div class="text-md text-gray-800 font-bold">Password:</div>
             <div class="mt-1 flex">
               <div class="w-full">
