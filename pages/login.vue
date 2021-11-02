@@ -14,6 +14,7 @@
             <div class="mt-1">
               <input
                 class="
+                  bg-white
                   border
                   shadow
                   w-full
@@ -34,6 +35,7 @@
                 <input
                   :type="visibility"
                   class="
+                    bg-white
                     border
                     shadow
                     w-full

@@ -5,17 +5,16 @@
         <div class="w-1/2 float-left lg:w-full lg:float-none">
           <select
             class="
+              bg-white
               w-11/12
               lg:w-full
               rounded-lg
               border-2 border-blue-200
-              text-blue-600
-              h-8
-              lg:h-10
+              text-blue-300
+              h-10
               px-1
               focus:outline-none
-              mb-2
-              lg:mb-4
+              mb-4
             "
           >
             <option value="" disabled selected>Country</option>
@@ -26,16 +25,15 @@
           <select
             class="
               lg:w-full
+              bg-white
               w-11/12
               rounded-lg
               border-2 border-blue-200
-              text-blue-600
-              h-8
-              lg:h-10
+              text-blue-300
+              h-10
               px-1
               focus:outline-none
-              mb-2
-              lg:mb-4
+              mb-4
             "
           >
             <option>State/Province</option>
@@ -47,17 +45,16 @@
         <div class="w-1/2 float-left lg:w-full lg:float-none">
           <select
             class="
+              bg-white
               w-11/12
               lg:w-full
               rounded-lg
               border-2 border-blue-200
-              text-blue-600
-              h-8
-              lg:h-10
+              text-blue-300
+              h-10
               px-1
               focus:outline-none
-              mb-2
-              lg:mb-4
+              mb-4
             "
           >
             <option>City/Municipality</option>
@@ -67,17 +64,16 @@
         <div class="w-1/2 text-right float-right lg:w-full lg:float-none">
           <select
             class="
+              bg-white
               w-11/12
               lg:w-full
               rounded-lg
               border-2 border-blue-200
-              text-blue-600
-              h-8
-              lg:h-10
+              text-blue-300
+              h-10
               px-1
               focus:outline-none
-              mb-2
-              lg:mb-4
+              mb-4
             "
           >
             <option>Corporation</option>
@@ -91,8 +87,7 @@
           class="
             bg-blue-200
             w-full
-            h-8
-            lg:h-10
+            h-10
             rounded-lg
             text-blue-400
             hover:bg-black
