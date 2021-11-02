@@ -1,12 +1,11 @@
 <template>
   <div>
     <div class="shadow bg-green-50 border-b border-green-100">
-      <div class="w-4/5 mx-auto pt-2 pb-3">
+      <div class="w-11/12 md:w-4/5 mx-auto pt-2 pb-3">
         <div class="flex">
-          <div class="w-1/4 text-4xl font-black">
+          <div class="w-1/4 text-3xl md:text-4xl font-black pt-1 md:pt-0">
             <a href="https://captainun.org">
               <span class="text-green-600">CAPTAIN</span>
-              <!-- <span class="text-blue-600">UN</span> -->
             </a>
           </div>
           <div class="w-3/4 text-right">
@@ -23,7 +22,7 @@
                   text-center
                 "
               >
-                <span>Volunteers</span>
+                <span class="text-sm md:text-base">VOLUNTEERS</span>
               </button>
               <div class="dropdown-content rounded-md w-32">
                 <div class="items-center">

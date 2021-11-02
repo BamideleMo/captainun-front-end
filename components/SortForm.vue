@@ -1,8 +1,10 @@
 <template>
-  <div class="w-1/5">
-    <form class="mt-6">
+  <div class="w-full lg:w-1/5">
+    <form class="mt-6 flex lg:flex-none">
       <select
         class="
+          flex-1
+          lg:flex-none
           w-full
           rounded-lg
           border-2 border-blue-200

@@ -1,7 +1,7 @@
 <template>
   <div class="bg-green-50">
     <Caption />
-    <div class="w-4/5 mx-auto py-16 flex">
+    <div class="w-4/5 mx-auto py-16 lg:flex">
       <Map />
       <SortForm />
     </div>
