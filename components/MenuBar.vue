@@ -31,9 +31,7 @@
           :class="open ? 'block' : 'hidden'"
           class="w-full flex-grow sm:flex sm:items-center sm:w-auto"
         >
-          <ul
-            class="text-sm sm:text-base sm:flex-grow text-right sm:text-center"
-          >
+          <ul class="text-sm sm:text-base sm:flex-grow text-center">
             <li
               href="#responsive-header"
               class="
@@ -83,15 +81,7 @@
               <NuxtLink to="/donate">DONATE</NuxtLink>
             </li>
           </ul>
-          <div
-            class="
-              text-right
-              sm:text-center
-              py-4
-              border-b-2 border-black
-              sm:border-0
-            "
-          >
+          <div class="text-center py-4 border-b-2 border-black sm:border-0">
             <NuxtLink
               to="/login"
               class="
