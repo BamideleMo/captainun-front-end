@@ -82,7 +82,7 @@
         </button>
       </div>
     </form>
-    <div class="mt-12 md:text-right">
+    <div class="mt-12 text-center md:text-right">
       <img class="h-24 inline" src="~/assets/undp-logo.jpg" />
       <img class="h-24 inline" src="~/assets/unicef-logo.png" />
     </div>

@@ -3,7 +3,7 @@
     <div class="w-11/12 lg:w-4/5 mx-auto py-3">
       <nav class="flex items-center justify-between flex-wrap bg-teal">
         <div class="flex items-center flex-no-shrink text-white">
-          <a href="https:captainun.org"
+          <a href="https://www.captainun.org/"
             ><img
               src="~/assets/captainun-logo.png"
               class="w-16 h-16 md:w-20 md:h-20 rounded-full"
