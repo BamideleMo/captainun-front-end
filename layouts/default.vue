@@ -1,3 +1,6 @@
 <template>
-  <div class="w-auto"><MenuBar /> <Nuxt /><Footer /></div>
+  <div class="w-auto">
+    <MenuBar />
+    <Nuxt /><Footer />
+  </div>
 </template>

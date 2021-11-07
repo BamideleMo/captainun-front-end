@@ -1,116 +1,120 @@
 <template>
-  <div>
-    <div class="shadow bg-green-50 border-b border-gray-400">
-      <div class="w-11/12 md:w-4/5 mx-auto pt-2 pb-3">
-        <div class="flex">
-          <div class="w-1/4 text-3xl md:text-4xl font-black">
-            <a href="https://captainun.org">
-              <span class="text-green-600">CAPTAIN</span>
-            </a>
-          </div>
-          <div class="w-3/4 text-right">
-            <div class="dropdown">
-              <button
-                class="
-                  dropbtn
-                  w-32
-                  rounded-md
-                  p-2
-                  ml-2
-                  md:ml-6
-                  truncate
-                  text-center
-                "
-              >
-                <span class="text-sm md:text-base">VOLUNTEERS</span>
-              </button>
-              <div class="dropdown-content rounded-md w-32">
-                <div class="items-center">
-                  <img
-                    class="w-6 mx-auto -mt-1.5"
-                    src="~/assets/icons8-sort-up-30.png"
-                    alt="JosWaya Menu"
-                  />
-                </div>
-                <div
-                  class="
-                    dropdown-contentin
-                    -mt-2
-                    border-2 border-blue-500
-                    text-sm
-                  "
-                >
-                  <div>
-                    <NuxtLink to="/login">Login</NuxtLink>
-                    <NuxtLink to="/register" class="b">Register</NuxtLink>
-                    <NuxtLink to="/learn-more">Learn More</NuxtLink>
-                  </div>
-                </div>
-              </div>
-            </div>
+  <div class="bg-green-50">
+    <div class="w-11/12 lg:w-4/5 mx-auto py-3">
+      <nav class="flex items-center justify-between flex-wrap bg-teal">
+        <div class="flex items-center flex-no-shrink text-white">
+          <a href="https:captainun.org"
+            ><img
+              src="~/assets/captainun-logo.png"
+              class="w-16 h-16 md:w-20 md:h-20 rounded-full"
+              alt="Logo"
+          /></a>
+        </div>
+        <div class="block sm:hidden">
+          <button
+            @click="toggle()"
+            class="
+              flex
+              items-center
+              px-0
+              py-2
+              rounded
+              text-blue-600
+              hover:text-gray-600 hover:border-white
+            "
+          >
+            <img v-if="open" src="~/assets/cancel.png" class="w-6" />
+            <img v-else src="~/assets/more.png" class="w-8" />
+          </button>
+        </div>
+        <div
+          :class="open ? 'block' : 'hidden'"
+          class="w-full flex-grow sm:flex sm:items-center sm:w-auto"
+        >
+          <ul class="text-sm sm:text-base sm:flex-grow text-center">
+            <li
+              href="#responsive-header"
+              class="
+                no-underline
+                block
+                mt-4
+                border-b-2 border-blue-600
+                py-3
+                md:py-0
+                sm:inline-block sm:mt-0
+                text-teal-lighter
+                sm:mr-8
+              "
+            >
+              <NuxtLink to="/about-us">ABOUT US</NuxtLink>
+            </li>
+            <li
+              href="#responsive-header"
+              class="
+                no-underline
+                block
+                mt-0
+                border-b-2 border-blue-600
+                py-3
+                md:py-0
+                sm:inline-block sm:mt-0
+                text-teal-lighter
+                sm:mr-8
+              "
+            >
+              <NuxtLink to="/contact-us">CONTACT US</NuxtLink>
+            </li>
+            <li
+              href="#responsive-header"
+              class="
+                no-underline
+                block
+                mt-0
+                border-b-2 border-blue-600
+                py-3
+                md:py-0
+                sm:inline-block sm:mt-0
+                text-teal-lighter
+                sm:mr-8
+              "
+            >
+              <NuxtLink to="/donate">DONATE</NuxtLink>
+            </li>
+          </ul>
+          <div class="text-center py-4 border-b-2 border-black sm:border-0">
+            <NuxtLink
+              to="/login"
+              class="
+                text-sm
+                px-4
+                py-2
+                rounded-xl
+                text-white
+                bg-blue-600
+                hover:border-transparent hover:text-black hover:bg-blue-200
+              "
+              >VOLUNTEERS</NuxtLink
+            >
           </div>
         </div>
-      </div>
+      </nav>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      open: false,
+    };
+  },
+  methods: {
+    toggle() {
+      this.open = !this.open;
+    },
+  },
+};
 </script>
 
-<style>
-.dropbtn {
-  background-color: #276af0;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: transparent;
-  /* min-width: 115px; */
-  z-index: 1;
-  text-align: left;
-  right: 0;
-}
-
-.dropdown-contentin {
-  background-color: #ffffff;
-  text-align: left;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-}
-
-.dropdown-contentin .b {
-  border-top: #f1f1f1 solid 1px;
-  border-bottom: #f1f1f1 solid 1px;
-}
-
-.dropdown-content a {
-  color: #276af0;
-  padding: 12px 10px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {
-  background-color: #f1f1f1;
-  color: #276af0;
-  border-radius: inherit;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.dropdown:hover .dropbtn {
-  color: #f1f1f1;
-}
-</style>
+<style></style>
