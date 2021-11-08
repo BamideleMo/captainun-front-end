@@ -35,7 +35,7 @@
 
 <script>
 export default {
-  props: ["isError"],
+  props: ["isError", "alert"],
 };
 </script>
 

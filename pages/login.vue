@@ -13,7 +13,7 @@
             class="rounded-lg bg-gray-100 py-8 px-3 lg:px-6 mt-8"
             @submit.prevent="submitForm"
           >
-            <Alert :isError="isError" />
+            <Alert :isError="isError" :alert="alert" />
             <ValidationProvider
               name="Username"
               rules="required|min:3"
