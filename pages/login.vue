@@ -162,7 +162,7 @@
 <script>
 import { ValidationProvider, ValidationObserver } from "vee-validate";
 export default {
-  middleware: "guest",
+  // middleware: "guest",
   components: {
     ValidationProvider,
     ValidationObserver,
