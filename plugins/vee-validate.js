@@ -7,6 +7,7 @@ import {
   digits,
   confirmed,
   alpha_spaces,
+  alpha,
 } from "vee-validate/dist/rules";
 
 extend("musthaveleadingzero", (value) => {
@@ -38,5 +39,9 @@ extend("confirmed", {
 });
 extend("alpha_spaces", {
   ...alpha_spaces,
+  message: "Invalid {_field_}",
+});
+extend("alpha", {
+  ...alpha,
   message: "Invalid {_field_}",
 });

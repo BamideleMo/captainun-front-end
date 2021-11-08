@@ -42,7 +42,36 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: ["@nuxtjs/axios", "@nuxtjs/auth-next"],
+
+  auth: {
+    strategies: {
+      local: {
+        token: {
+          property: "token",
+          global: true,
+          // required: true,
+          // type: 'Bearer'
+        },
+        user: {
+          property: "user",
+          // autoFetch: true
+        },
+        endpoints: {
+          login: { url: "/auth/login", method: "post" },
+          // logout: { url: "/auth/logout", method: "post" },
+          logout: false,
+          user: { url: "/auth/user", method: "get" },
+        },
+      },
+    },
+  },
+
+  // Axios module configuration: https://go.nuxtjs.dev/config-axios
+  axios: {
+    // baseURL: "https://joswaya-flask-api.herokuapp.com/api/v1",
+    baseURL: "http://127.0.0.1:5000/api/v1",
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

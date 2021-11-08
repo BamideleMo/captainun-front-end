@@ -9,8 +9,11 @@
           </p>
         </div>
         <ValidationObserver v-slot="{ invalid }">
-          <form class="rounded-lg bg-gray-100 py-8 px-3 lg:px-6 mt-8">
-            <Alert />
+          <form
+            class="rounded-lg bg-gray-100 py-8 px-3 lg:px-6 mt-8"
+            @submit.prevent="submitForm"
+          >
+            <Alert :isError="isError" />
             <ValidationProvider
               name="Fullname"
               rules="required|min:3|alpha_spaces"
@@ -149,6 +152,8 @@
                     "
                     v-model="country"
                   >
+                    <option value="" disabled selected>Country</option>
+
                     <option value="" disabled selected>Country</option>
                     <option value="Afganistan">Afghanistan</option>
                     <option value="Albania">Albania</option>
@@ -585,7 +590,7 @@
                   class="
                     w-full
                     bg-gray-500
-                    text-white
+                    text-gray-400
                     h-10
                     p-2
                     rounded-lg
@@ -593,15 +598,21 @@
                   "
                   disabled
                 >
-                  . . .
+                  Register as Volunteer
                 </button>
                 <div v-else>
                   <button
                     v-if="isLoading"
-                    class="w-full bg-green-200 text-white h-10 p-2 rounded-lg
-                    cursor-wait
-                  "
-                  disabled
+                    class="
+                      w-full
+                      bg-green-200
+                      text-white
+                      h-10
+                      p-2
+                      rounded-lg
+                      cursor-wait
+                    "
+                    disabled
                   >
                     Processing...
                   </button>
@@ -630,6 +641,7 @@
 </template>
 
 <script>
+import axios from "axios";
 import { ValidationProvider, ValidationObserver } from "vee-validate";
 export default {
   components: {
@@ -676,6 +688,34 @@ export default {
     },
     hidePassword2() {
       this.visibility2 = "password";
+    },
+    async submitForm() {
+      this.isLoading = true;
+
+      const data = {
+        fullname: this.fullname,
+        email: this.email,
+        group: this.group,
+        country: this.country,
+        username: this.username,
+        password: this.password,
+      };
+      try {
+        const res = await axios.post(
+          this.$axios.defaults.baseURL + "/auth/register",
+          data
+        );
+        console.log(this.country);
+        this.$router.push("/successful-registration");
+      } catch (e) {
+        console.log(this.country);
+        this.isError = true;
+        this.isLoading = false;
+        this.alert = e.response
+          ? e.response.data.error
+          : "Sorry an error occured, check your internet";
+        console.log(e.message);
+      }
     },
   },
 };

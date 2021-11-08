@@ -34,7 +34,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: ["isError"],
+};
 </script>
 
 <style></style>
