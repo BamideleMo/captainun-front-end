@@ -3,7 +3,7 @@
     <div class="w-11/12 lg:w-4/5 mx-auto py-6">
       <div class="text-xs md:text-sm text-center md:text-right">
         <a
-          href="https:captainun.org"
+          href="https://www.captainun.org/"
           class="
             p-2
             rounded-xl
