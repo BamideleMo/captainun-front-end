@@ -12,7 +12,7 @@
             hover:border-transparent hover:text-black hover:bg-blue-200
             mr-2
           "
-          ><i class="far fa-home"></i
+          ><i class="fas fa-home"></i
         ></a>
         <NuxtLink
           to="/about"
