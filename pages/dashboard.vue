@@ -6,7 +6,7 @@
       </div>
       <section class="text-xl text-center">
         <p class="my-4">
-          <img src="~/assets/loading.gif" class="w-10/12 mx-auto" />
+          <img src="~/assets/loading.gif" class="w-48 mx-auto" />
         </p>
         <p class="my-4">.</p>
       </section>

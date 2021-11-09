@@ -50,17 +50,16 @@ export default {
         token: {
           property: "token",
           global: true,
-          // required: true,
-          // type: 'Bearer'
+          required: true,
+          type: "Bearer",
         },
         user: {
-          property: "user",
-          // autoFetch: true
+          property: false,
+          autoFetch: true,
         },
         endpoints: {
           login: { url: "/auth/login", method: "post" },
-          // logout: { url: "/auth/logout", method: "post" },
-          logout: false,
+          logout: { url: "/auth/logout", method: "post" },
           user: { url: "/auth/user", method: "get" },
         },
       },
@@ -69,8 +68,8 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: "https://captainun-api.herokuapp.com/api/v1",
-    // baseURL: "http://127.0.0.1:5000/api/v1",
+    // baseURL: "https://captainun-api.herokuapp.com/api/v1",
+    baseURL: "http://127.0.0.1:5000/api/v1",
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
