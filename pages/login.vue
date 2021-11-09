@@ -43,7 +43,7 @@
                       focus:outline-none
                     "
                     type="text"
-                    v-model="login"
+                    v-model="username"
                   />
                 </div>
               </div>

@@ -1,7 +1,7 @@
 <template>
   <div class="bg-green-50">
-    <div class="w-11/12 lg:w-4/5 mx-auto py-3">
-      <nav class="flex items-center justify-between flex-wrap bg-teal">
+    <div class="w-11/12 lg:w-4/5 mx-auto py-6">
+      <!-- <nav class="flex items-center justify-between flex-wrap bg-teal">
         <div class="flex items-center flex-no-shrink text-white">
           <a href="https://www.captainun.org/"
             ><img
@@ -46,7 +46,7 @@
                 sm:mr-8
               "
             >
-              <NuxtLink to="/about-us">ABOUT US</NuxtLink>
+              <NuxtLink to="/about-us">ABOUT</NuxtLink>
             </li>
             <li
               href="#responsive-header"
@@ -64,22 +64,6 @@
             >
               <NuxtLink to="/contact-us">CONTACT US</NuxtLink>
             </li>
-            <li
-              href="#responsive-header"
-              class="
-                no-underline
-                block
-                mt-0
-                border-b-2 border-blue-600
-                py-3
-                md:py-0
-                sm:inline-block sm:mt-0
-                text-teal-lighter
-                sm:mr-8
-              "
-            >
-              <NuxtLink to="/donate">DONATE</NuxtLink>
-            </li>
           </ul>
           <div class="text-center py-4 border-b-2 border-black sm:border-0">
             <NuxtLink
@@ -90,14 +74,63 @@
                 py-2
                 rounded-xl
                 text-white
-                bg-blue-600
+                bg-blue-500
                 hover:border-transparent hover:text-black hover:bg-blue-200
               "
               >VOLUNTEERS</NuxtLink
             >
           </div>
         </div>
-      </nav>
+      </nav> -->
+      <div class="text-xs md:text-sm text-center md:text-right">
+        <a
+          href="https:captainun.org"
+          class="
+            p-2
+            rounded-xl
+            text-white
+            bg-blue-500
+            hover:border-transparent hover:text-black hover:bg-blue-200
+            mr-2
+          "
+          ><i class="far fa-home"></i
+        ></a>
+        <NuxtLink
+          to="/about"
+          class="
+            p-2
+            rounded-xl
+            text-white
+            bg-blue-500
+            hover:border-transparent hover:text-black hover:bg-blue-200
+            mr-2
+          "
+          >ABOUT</NuxtLink
+        >
+        <NuxtLink
+          to="/contact-us"
+          class="
+            p-2
+            rounded-xl
+            text-white
+            bg-blue-500
+            hover:border-transparent hover:text-black hover:bg-blue-200
+            mr-2
+          "
+          >CONTACT US</NuxtLink
+        >
+        <NuxtLink
+          to="/login"
+          class="
+            p-2
+            rounded-xl
+            text-white
+            bg-blue-500
+            hover:border-transparent hover:text-black hover:bg-blue-200
+          "
+          >VOLUNTEERS</NuxtLink
+        >
+      </div>
     </div>
   </div>
 </template>
