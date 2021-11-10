@@ -15,8 +15,9 @@
           mb-3
           md:mb-0
         "
+        @click="toDefineCAP"
       >
-        Define Climate Goal</button
+        Define CAP</button
       ><button
         class="
           bg-blue-800
@@ -73,6 +74,11 @@
 <script>
 export default {
   middleware: "auth",
+  methods: {
+    toDefineCAP() {
+      this.$router.push("/define-cap");
+    },
+  },
 };
 </script>
 

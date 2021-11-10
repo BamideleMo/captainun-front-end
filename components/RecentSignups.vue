@@ -3,7 +3,7 @@
     <h2 class="text-blue-500 font-bold">#See recent signup requests:</h2>
     <table class="w-full mt-2 text-xs">
       <thead>
-        <tr class="bg-gray-800 text-white p-2">
+        <tr class="bg-gray-200 text-gray-900 p-2 rounded-tl-md rounded-tr-md">
           <td class="w-1/5">Sn</td>
           <td class="w-1/5">Date</td>
           <td class="w-1/5">Fullname</td>
@@ -20,7 +20,14 @@
           <td class="w-1/5">
             <a
               href="#"
-              class="bg-green-400 p-1 text-black rounded-md hover:bg-green-100"
+              class="
+                bg-green-400
+                py-1
+                px-2
+                text-black
+                rounded-md
+                hover:bg-green-100
+              "
             >
               More
             </a>
