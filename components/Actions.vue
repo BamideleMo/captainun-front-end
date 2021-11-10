@@ -1,6 +1,6 @@
 <template>
   <main>
-    <h2 class="text-blue-500 font-bold">#Actions:</h2>
+    <h2 class="text-blue-500 font-bold border-b border-blue-500">#Actions:</h2>
     <div class="lg:flex my-2 text-sm">
       <button
         class="

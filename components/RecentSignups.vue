@@ -1,7 +1,9 @@
 <template>
   <main>
-    <h2 class="text-blue-500 font-bold">#See recent signup requests:</h2>
-    <table class="w-full mt-2 text-xs">
+    <h2 class="text-blue-500 font-bold border-b border-blue-500">
+      #See recent signup requests:
+    </h2>
+    <table class="w-full text-xs">
       <thead>
         <tr class="bg-gray-200 text-gray-900 p-2 rounded-tl-md rounded-tr-md">
           <td class="w-1/5">Sn</td>
