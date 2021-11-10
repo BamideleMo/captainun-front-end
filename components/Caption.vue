@@ -15,6 +15,7 @@
           text-blue-500
           font-black
           md:pt-2
+          mt-1
         "
       >
         CAPTAIN UN

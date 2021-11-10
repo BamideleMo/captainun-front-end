@@ -13,9 +13,7 @@
             <span class="text-red-400">{{ $auth.user.data.group }}</span>
           </p>
           <p class="w-1/5 text-blue-600 text-right">
-            <NuxtLink to="/dashboard"
-              ><i class="fas fa-clipboard"></i
-            ></NuxtLink>
+            <a @click="logout" href="#"><i class="fas fa-sign-out-alt"></i></a>
           </p>
         </div>
       </div>
@@ -24,7 +22,14 @@
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    async logout() {
+      await this.$auth.logout();
+      this.$router.push("/login");
+    },
+  },
+};
 </script>
 
 <style></style>

@@ -39,9 +39,8 @@
           >CONTACT US</NuxtLink
         >
         <span v-if="$auth.loggedIn">
-          <a
-            href="#"
-            @click="logout"
+          <NuxtLink
+            to="/dashboard"
             class="
               p-2
               rounded-xl
@@ -49,7 +48,7 @@
               bg-blue-500
               hover:border-transparent hover:text-black hover:bg-blue-200
             "
-            >LOGOUT</a
+            >DASHBOARD</NuxtLink
           >
         </span>
         <span v-else>
@@ -80,10 +79,6 @@ export default {
   methods: {
     toggle() {
       this.open = !this.open;
-    },
-    async logout() {
-      await this.$auth.logout();
-      this.$router.push("/login");
     },
   },
 };

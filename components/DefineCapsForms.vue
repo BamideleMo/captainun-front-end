@@ -10,11 +10,25 @@
           </select>
         </div>
       </div>
-      <div class="my-2">
+      <div class="my-6">
         <div class="my-2">Attach Infographic:</div>
         <div>
           <input class="w-full border rounded-md" type="file" />
         </div>
+      </div>
+      <div class="my-6">
+        <button
+          class="
+            w-full
+            rounded-xl
+            bg-blue-900
+            text-white
+            py-3
+            hover:bg-blue-500
+          "
+        >
+          Post CAP
+        </button>
       </div>
     </form>
     <form v-if="whichform === 'TabState'">
