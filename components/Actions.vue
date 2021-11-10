@@ -3,22 +3,66 @@
     <h2 class="text-blue-500 font-bold">#Actions:</h2>
     <div class="lg:flex my-2 text-sm">
       <button
-        class="lg:flex-1 block mr-2 bg-blue-900 text-white p-2 rounded-md"
+        class="
+          bg-blue-800
+          text-white
+          mx-2
+          p-2
+          rounded-md
+          hover:bg-blue-400
+          block
+          md:inline-block
+          mb-3
+          md:mb-0
+        "
       >
         Define Climate Goal</button
       ><button
-        class="lg:flex-1 block mr-2 bg-blue-900 text-white p-2 rounded-md"
+        class="
+          bg-blue-800
+          text-white
+          mx-2
+          p-2
+          rounded-md
+          hover:bg-blue-400
+          block
+          md:inline-block
+          mb-3
+          md:mb-0
+        "
       >
         Approve Climate Goals</button
       ><button
         v-if="$auth.user.data.group === 'Admin'"
-        class="lg:flex-1 block my-2 mb-2 bg-blue-900 text-white p-2 rounded-md"
+        class="
+          bg-blue-800
+          text-white
+          mx-2
+          p-2
+          rounded-md
+          hover:bg-blue-400
+          block
+          md:inline-block
+          mb-3
+          md:mb-0
+        "
       >
         Delete Accounts
       </button>
       <button
         v-if="$auth.user.data.group === 'Admin'"
-        class="lg:flex-1 block my-4 mr-2 bg-blue-900 text-white p-2 rounded-md"
+        class="
+          bg-blue-800
+          text-white
+          mx-2
+          p-2
+          rounded-md
+          hover:bg-blue-400
+          block
+          md:inline-block
+          mb-3
+          md:mb-0
+        "
       >
         Approve Sign Up Requests
       </button>

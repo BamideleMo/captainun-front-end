@@ -7,8 +7,8 @@
           <td class="w-1/5">Sn</td>
           <td class="w-1/5">Date</td>
           <td class="w-1/5">Fullname</td>
-          <td class="w-1/5">Email</td>
-          <td class="w-1/5">#</td>
+          <td class="w-1/5">Group</td>
+          <td class="w-1/5">More</td>
         </tr>
       </thead>
       <tbody v-for="(user, index) in unverified_users" v-bind:key="user.id">
@@ -16,13 +16,13 @@
           <td class="text-gray-500 w-1/5">{{ index + 1 }}</td>
           <td class="w-1/5">{{ user.date }}</td>
           <td class="w-1/5">{{ user.fullname }}</td>
-          <td class="w-1/5">{{ user.email }}</td>
+          <td class="w-1/5">{{ user.group }}</td>
           <td class="w-1/5">
             <a
               href="#"
               class="bg-green-400 p-1 text-black rounded-md hover:bg-green-100"
             >
-              Details
+              More
             </a>
           </td>
         </tr>
@@ -45,15 +45,7 @@ export default {
       unverified_users_array: [],
     };
   },
-  methods: {
-    // unverifiedusersData() {
-    //   for (var i = 0; i < this.unverified_users.length; i++) {
-    //     this.unverified_users_array.push(this.unverified_users[i].fullname);
-    //   }
-    //   console.log(this.unverified_users_array);
-    //   return this.unverified_users_array;
-    // },
-  },
+  methods: {},
 };
 </script>
 
