@@ -4,25 +4,26 @@
     <table class="w-full mt-2 text-xs">
       <thead>
         <tr class="bg-gray-800 text-white p-2">
-          <td>Sn</td>
-          <td>Date</td>
-          <td>Fullname</td>
-          <td>Email</td>
-          <td>#</td>
+          <td class="w-1/5">Sn</td>
+          <td class="w-1/5">Date</td>
+          <td class="w-1/5">Fullname</td>
+          <td class="w-1/5">Email</td>
+          <td class="w-1/5">#</td>
         </tr>
       </thead>
       <tbody v-for="(user, index) in unverified_users" v-bind:key="user.id">
         <tr>
-          <td class="text-gray-500">{{ index + 1 }}</td>
-          <td>{{ user.date }}</td>
-          <td>{{ user.fullname }}</td>
-          <td>{{ user.email }}</td>
-          <td>
-            <button
+          <td class="text-gray-500 w-1/5">{{ index + 1 }}</td>
+          <td class="w-1/5">{{ user.date }}</td>
+          <td class="w-1/5">{{ user.fullname }}</td>
+          <td class="w-1/5">{{ user.email }}</td>
+          <td class="w-1/5">
+            <a
+              href="#"
               class="bg-green-400 p-1 text-black rounded-md hover:bg-green-100"
             >
               Details
-            </button>
+            </a>
           </td>
         </tr>
       </tbody>
@@ -58,7 +59,7 @@ export default {
 
 <style scoped>
 td {
-  padding: 4px 2px;
+  padding: 12px 2px;
   border-bottom: 1px solid #eeeeee;
 }
 </style>

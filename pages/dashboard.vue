@@ -2,7 +2,7 @@
   <main>
     <div class="w-11/12 lg:w-3/5 mx-auto my-4">
       <div class="my-4 text-center">
-        <h2 class="text-3xl font-bold">My Dashbaord</h2>
+        <h2 class="text-3xl font-bold">My Dashboard</h2>
       </div>
       <section class="flex text-base">
         <div class="flex-1">
@@ -10,11 +10,18 @@
             Hi <b>{{ $auth.user.data.fullname }}</b>
           </p>
         </div>
-        <div class="flex-1 text-right">
-          <p class="my-2">
-            <b>Status:</b>
-            <span class="text-red-400">{{ $auth.user.data.group }}</span>
-          </p>
+        <div class="flex-1">
+          <div class="my-2 flex">
+            <p class="w-4/5 text-center">
+              <b>Status:</b>
+              <span class="text-red-400">{{ $auth.user.data.group }}</span>
+            </p>
+            <p class="w-1/5 text-blue-600 text-right">
+              <NuxtLink to="/dashboard"
+                ><i class="fas fa-clipboard"></i
+              ></NuxtLink>
+            </p>
+          </div>
         </div>
       </section>
 
@@ -46,8 +53,8 @@
       >
         <div><Actions /></div>
         <div class="my-4"><RecentGoals /></div>
+        <div class="my-4"><RecentComments /></div>
         <div v-if="$auth.user.data.group === 'Admin'">
-          <div class="my-4"><RecentComments /></div>
           <div><RecentSignups :unverified_users="unverified_users" /></div>
         </div>
       </section>
