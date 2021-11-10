@@ -207,7 +207,7 @@ export default {
         await this.$auth.loginWith("local", {
           data: data,
         });
-        this.$router.push("/dashboard");
+        this.$router.push("/dashboard?un=" + data.username);
       } catch (e) {
         this.isError = true;
         this.isLoading = false;

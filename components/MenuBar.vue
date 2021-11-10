@@ -38,17 +38,33 @@
           "
           >CONTACT US</NuxtLink
         >
-        <NuxtLink
-          to="/login"
-          class="
-            p-2
-            rounded-xl
-            text-white
-            bg-blue-500
-            hover:border-transparent hover:text-black hover:bg-blue-200
-          "
-          >VOLUNTEERS</NuxtLink
-        >
+        <span v-if="$auth.loggedIn">
+          <a
+            href="#"
+            @click="logout"
+            class="
+              p-2
+              rounded-xl
+              text-white
+              bg-blue-500
+              hover:border-transparent hover:text-black hover:bg-blue-200
+            "
+            >LOGOUT</a
+          >
+        </span>
+        <span v-else>
+          <NuxtLink
+            to="/login"
+            class="
+              p-2
+              rounded-xl
+              text-white
+              bg-blue-500
+              hover:border-transparent hover:text-black hover:bg-blue-200
+            "
+            >VOLUNTEERS</NuxtLink
+          >
+        </span>
       </div>
     </div>
   </div>
@@ -64,6 +80,10 @@ export default {
   methods: {
     toggle() {
       this.open = !this.open;
+    },
+    async logout() {
+      await this.$auth.logout();
+      this.$router.push("/login");
     },
   },
 };

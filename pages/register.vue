@@ -115,8 +115,8 @@
                     v-model="group"
                   >
                     <option value="" disabled selected>Group</option>
-                    <option value="level3">Volunteers</option>
-                    <option value="level2">Climate Backstops</option>
+                    <option value="Volunteers">Volunteers</option>
+                    <option value="Backstops">Climate Backstops</option>
                   </select>
                 </div>
               </div>
