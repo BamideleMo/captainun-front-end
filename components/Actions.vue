@@ -32,6 +32,22 @@
           md:mb-0
         "
       >
+        Add Update</button
+      >
+      <button
+        class="
+          bg-blue-800
+          text-white
+          mx-2
+          p-2
+          rounded-md
+          hover:bg-blue-400
+          block
+          md:inline-block
+          mb-3
+          md:mb-0
+        "
+      >
         Approve Climate Goals</button
       ><button
         v-if="$auth.user.data.group === 'Admin'"
