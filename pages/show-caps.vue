@@ -7,7 +7,30 @@
         </h2>
       </div>
       <section class="text-base">
-        <p>{{ $route.query.country }}</p>
+        <div
+          v-for="cap in acountrycaps"
+          v-bind:key="cap.id"
+          class="flex text-sm my-10 border"
+        >
+          <div class="flex-1 flex">
+            <div class="w-1/5 text-center p-1 flex items-center">
+              <img :src="cap.img" class="" />
+            </div>
+            <div class="w-4/5 p-1 bg-blue-500 text-white flex items-center">
+              {{ cap.climate_goal }}
+            </div>
+          </div>
+          <div class="flex-1 flex">
+            <div class="w-1/5 text-center p-1 flex items-center bg-red-500">
+              <div class="text-white align-middle text-center mx-auto">
+                No Rating Yet
+              </div>
+            </div>
+            <div class="w-4/5 p-1 bg-blue-500 text-white flex items-center">
+              No update yet
+            </div>
+          </div>
+        </div>
       </section>
     </div>
   </main>
@@ -16,19 +39,22 @@
 <script>
 export default {
   methods: {},
-  async asyncData({ $axios }) {
+  async asyncData({ $axios, query }) {
+    console.log(query.country);
     const URL = $axios.defaults.baseURL;
     let [
-      lastestcapsRes,
-      // budgetstatsRes,
+      acountrycapsRes,
       // categorystatsRes,
       // userRes,
-    ] = await Promise.all([$axios.$get(URL + "/country/cap/")]);
-    let lastestcapss = lastestcapsRes.country_caps;
+    ] = await Promise.all([
+      $axios.$get(
+        URL + "/country/a-country-caps?per_page=100&country=" + query.country
+      ),
+    ]);
+    let acountrycapss = acountrycapsRes.a_country_caps;
     // console.log(lastestcapss);
     return {
-      unverified_users: unverified_userss,
-      lastestcaps: lastestcapss,
+      acountrycaps: acountrycapss,
     };
   },
 };
