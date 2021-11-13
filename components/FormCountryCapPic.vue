@@ -1,6 +1,6 @@
 <template>
   <ValidationObserver v-slot="{ invalid }">
-    <form @submit.prevent="submitForm">
+    <form @submit.prevent="submitForm" enctype="multipart/form-data">
       <h2 class="font-bold my-4 text-base">Define CAP for a Country</h2>
       <ValidationProvider
         name="File"
@@ -21,8 +21,7 @@
             <input
               class="w-full border rounded-md"
               type="file"
-              accept=".jpeg,.jpg,.png,image/jpeg,image/png"
-              @change="selectFile"
+              @change="onFileChanged"
             />
           </div>
         </div>
@@ -339,7 +338,7 @@
       </ValidationProvider>
       <div class="my-6">
         <button
-          v-if="invalid || filesSelected < 1"
+          v-if="invalid"
           class="
             w-full
             bg-gray-500
@@ -370,7 +369,6 @@
             Processing...
           </button>
           <button
-            type="submit"
             v-else
             class="w-full bg-blue-800 text-white h-10 p-2 rounded-lg"
           >
@@ -393,8 +391,7 @@ export default {
   props: ["tabcountry"],
   data() {
     return {
-      file: null,
-      filesSelected: 0,
+      selectedFile: null,
       country: "",
       climate_goal: "",
       isError: false,
@@ -404,47 +401,71 @@ export default {
     };
   },
   methods: {
-    selectFile(event) {
-      console.log("handleFileChange", event.target.files);
-      this.file = event.target.files[0];
-      this.filesSelected = event.target.files.length;
+    onFileChanged(event) {
+      this.selectedFile = event.target.files[0];
+      if (!this.selectedFile.length) return;
     },
-    async getCloudinary() {
-      if (!this.file) return;
-
-      const readData = (f) =>
-        new Promise((resolve) => {
-          const reader = new FileReader();
-          reader.onloadend = () => resolve(reader.result);
-          reader.readAsDataURL(f);
-        });
-
-      const data = await readData(this.file);
-
-      const instance = this.$cloudinary
-        .upload(data, {
-          folder: "caps_pictures",
-          uploadPreset: "sfn7mugf",
-        })
-        .then((meta) => {
-          return meta.url;
-        });
-    },
-    async submitForm(img) {
+    async submitForm() {
       this.isLoading = true;
 
-      getCloudinary()
-        .then()
-        .catch((e) => e);
+      let formData = new FormData();
+      formData.append("img", this.selectedFile);
+      //   formData.append("country", this.country);
+      //   formData.append("climate_goal", this.climate_goal);
+
+      console.log(formData + "------+++----");
 
       try {
+        console.log(this.selectedFile);
         const res = await axios.post(
-          this.$axios.defaults.baseURL + "/country/post-cap",
-          data
+          this.$axios.defaults.baseURL + "/country/post-goal",
+          { data: this.selectedFile }
         );
         console.log(this.country);
-        this.$router.push("/successful-registration");
-      } catch (e) {}
+        this.$router.push("/successful-post");
+      } catch (e) {
+        console.log(this.country);
+        this.isError = true;
+        this.isLoading = false;
+        this.alert = e.response
+          ? e.response.data.error
+          : "Sorry an error occured, check your internet";
+        console.log(e.message);
+      }
+
+      //--------------------------------//
+
+      //   if (!file) {
+      //     e.preventDefault();
+      //     alert("No file chosen");
+      //     return;
+      //   }
+      //   this.isLoading = true;
+      //   const formData = new FormData();
+      //   formData.append("image", this.selectedFile);
+      //   formData.append("country", this.country);
+      //   formData.append("climate_goal", this.climate_goal);
+      //   formData.append("posted_by", user_id);
+      //   try {
+      //     const res = await axios.post(
+      //       this.$axios.defaults.baseURL + "/country/post-goal",
+      //       formData,
+      //       {
+      //         headers: {
+      //           "Content-Type": "multipart/form-data",
+      //         },
+      //       }
+      //     );
+      //     console.log(res);
+      //     this.$router.push("/successful-submission");
+      //   } catch (e) {
+      //     this.isError = true;
+      //     this.isLoading = false;
+      //     this.alert = e.response
+      //       ? e.response.data.error
+      //       : "Sorry an error occured, check your internet";
+      //     console.log(e.message);
+      //   }
     },
   },
 };

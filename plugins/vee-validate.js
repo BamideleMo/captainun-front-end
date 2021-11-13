@@ -8,6 +8,8 @@ import {
   confirmed,
   alpha_spaces,
   alpha,
+  image,
+  ext,
 } from "vee-validate/dist/rules";
 
 extend("musthaveleadingzero", (value) => {
@@ -45,3 +47,5 @@ extend("alpha", {
   ...alpha,
   message: "Invalid {_field_}",
 });
+extend("image", image);
+extend("ext", ext);
