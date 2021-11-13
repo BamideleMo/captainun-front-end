@@ -34,7 +34,7 @@
         "
       >
         <div><Actions /></div>
-        <div class="my-4"><RecentGoals /></div>
+        <div class="my-4"><RecentGoals :lastestcaps="lastestcaps" /></div>
         <div class="my-4"><RecentComments /></div>
         <div v-if="$auth.user.data.group === 'Admin'">
           <div><RecentSignups :unverified_users="unverified_users" /></div>
@@ -53,15 +53,20 @@ export default {
     const URL = $axios.defaults.baseURL;
     let [
       unverifiedusersRes,
-      // brandstatsRes,
+      lastestcapsRes,
       // budgetstatsRes,
       // categorystatsRes,
       // userRes,
-    ] = await Promise.all([$axios.$get(URL + "/auth/all_unverified_users")]);
+    ] = await Promise.all([
+      $axios.$get(URL + "/auth/all-unverified-users"),
+      $axios.$get(URL + "/country/all-caps?per_page=5"),
+    ]);
     let unverified_userss = unverifiedusersRes.unverified_users;
-    // console.log(unverified_userss);
+    let lastestcapss = lastestcapsRes.country_caps;
+    // console.log(lastestcapss);
     return {
       unverified_users: unverified_userss,
+      lastestcaps: lastestcapss,
     };
   },
 };

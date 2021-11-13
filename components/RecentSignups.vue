@@ -60,7 +60,7 @@ export default {
 
 <style scoped>
 td {
-  padding: 12px 2px;
+  padding: 8px 2px;
   border-bottom: 1px solid #eeeeee;
 }
 </style>

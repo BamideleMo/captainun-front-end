@@ -43,7 +43,10 @@
             </span>
           </div>
           <div>
-            <select v-model="country" class="w-full border rounded-md h-9 px-2">
+            <select
+              v-model="country_name"
+              class="w-full border rounded-md h-9 px-2"
+            >
               <option value="" disabled selected>Country</option>
               <option value="Afganistan">Afghanistan</option>
               <option value="Albania">Albania</option>
@@ -395,8 +398,10 @@ export default {
     return {
       file: null,
       filesSelected: 0,
-      country: "",
+      country_name: "",
+      img: "",
       climate_goal: "",
+      posted_by: "",
       isError: false,
       alert: "",
       isLoading: false,
@@ -409,7 +414,34 @@ export default {
       this.file = event.target.files[0];
       this.filesSelected = event.target.files.length;
     },
-    async getCloudinary() {
+
+    async realSubmit(img) {
+      this.isLoading = true;
+
+      const data = {
+        country_name: this.country_name,
+        climate_goal: this.climate_goal,
+        posted_by: "Moses",
+        img: img,
+      };
+      try {
+        const res = await axios.post(
+          this.$axios.defaults.baseURL + "/country/post-cap",
+          data
+        );
+        this.$router.push("/success-posting");
+      } catch (e) {
+        this.isError = true;
+        this.isLoading = false;
+        this.alert = e.response
+          ? e.response.data.error
+          : "Sorry an error occured, check your internet";
+        console.log(e.message);
+      }
+    },
+    async submitForm() {
+      this.isLoading = true;
+
       if (!this.file) return;
 
       const readData = (f) =>
@@ -427,24 +459,10 @@ export default {
           uploadPreset: "sfn7mugf",
         })
         .then((meta) => {
-          return meta.url;
+          this.img = meta.url;
+          console.log(this.img);
+          this.realSubmit(this.img);
         });
-    },
-    async submitForm(img) {
-      this.isLoading = true;
-
-      getCloudinary()
-        .then()
-        .catch((e) => e);
-
-      try {
-        const res = await axios.post(
-          this.$axios.defaults.baseURL + "/country/post-cap",
-          data
-        );
-        console.log(this.country);
-        this.$router.push("/successful-registration");
-      } catch (e) {}
     },
   },
 };
