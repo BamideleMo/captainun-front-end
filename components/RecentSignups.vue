@@ -1,38 +1,44 @@
 <template>
   <main>
-    <h2 class="text-blue-500 font-bold border-b border-blue-500">
+    <h2 class="text-blue-300 py-2 font-bold border-b border-blue-500 mt-6">
       #See recent signup requests:
     </h2>
-    <table class="w-full text-xs">
+    <table class="w-full table-fixed text-xs text-left">
       <thead>
-        <tr class="bg-gray-200 text-gray-900 p-2 rounded-tl-md rounded-tr-md">
-          <td class="w-1/5">Sn</td>
-          <td class="w-1/5">Date</td>
-          <td class="w-1/5">Fullname</td>
-          <td class="w-1/5">Group</td>
-          <td class="w-1/5">More</td>
+        <tr class="bg-gray-600 text-gray-100 rounded-tl-md rounded-tr-md">
+          <th class="w-1/12 p-2">Sn.</th>
+          <th class="w-2/12 p-2">Date</th>
+          <th class="w-2/12 p-2">Name</th>
+          <th class="w-2/12 p-2">Group</th>
+          <th class="w-2/12 p-2">Country</th>
+          <th class="w-2/12 p-2">Email</th>
+          <th class="w-1/12 p-2"></th>
         </tr>
       </thead>
-      <tbody v-for="(user, index) in unverified_users" v-bind:key="user.id">
-        <tr>
-          <td class="text-gray-500 w-1/5">{{ index + 1 }}</td>
-          <td class="w-1/5">{{ user.date }}</td>
-          <td class="w-1/5">{{ user.fullname }}</td>
-          <td class="w-1/5">{{ user.group }}</td>
-          <td class="w-1/5">
-            <a
-              href="#"
-              class="
-                bg-green-400
-                py-1
-                px-2
-                text-black
-                rounded-md
-                hover:bg-green-100
-              "
-            >
-              More
-            </a>
+      <tbody>
+        <tr
+          v-for="(user, index) in unverified_users"
+          v-bind:key="user.id"
+          @click="$router.push(`/users/${user.id}`)"
+          class="bg-gray-100 hover:bg-green-50 cursor-pointer"
+        >
+          <td class="text-gray-600 p-2">{{ index + 1 }}.</td>
+          <td class="overflow-ellipsis overflow-hidden p-2">{{ user.date }}</td>
+          <td class="overflow-ellipsis overflow-hidden p-2">
+            {{ user.fullname }}
+          </td>
+          <td class="overflow-ellipsis overflow-hidden p-2">
+            {{ user.group }}
+          </td>
+          <td class="overflow-ellipsis overflow-hidden p-2">
+            {{ user.country }}
+          </td>
+          <td class="overflow-ellipsis overflow-hidden p-2">
+            {{ user.email }}
+          </td>
+
+          <td class="p-2 text-blue-700">
+            <i class="fas fa-angle-double-right"></i>
           </td>
         </tr>
       </tbody>
@@ -60,7 +66,9 @@ export default {
 
 <style scoped>
 td {
-  padding: 8px 2px;
   border-bottom: 1px solid #eeeeee;
+}
+th {
+  text-align: left !important;
 }
 </style>

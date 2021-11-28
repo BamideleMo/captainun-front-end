@@ -1,11 +1,11 @@
 <template>
   <main>
-    <div class="w-11/12 lg:w-3/5 mx-auto my-4">
-      <DashboardMenu />
-
+    <div class="w-11/12 lg:w-3/5 mx-auto my-16">
       <div class="my-4 text-center">
         <h2 class="text-2xl md:text-3xl font-bold">My Dashboard</h2>
       </div>
+
+      <DashboardMenu />
 
       <section v-if="$auth.user.data.status === 'unverified'" class="text-sm">
         <p class="my-2">
@@ -19,6 +19,7 @@
         </p>
         <p>An admin will contact you as soon as possible.</p>
       </section>
+
       <section
         v-else-if="
           $auth.user.data.status === 'verified' &&
@@ -34,8 +35,8 @@
         "
       >
         <div><Actions /></div>
-        <div class="my-4"><RecentGoals :lastestcaps="lastestcaps" /></div>
-        <div class="my-4"><RecentComments /></div>
+        <div class="my-6"><RecentGoals :lastestcaps="lastestcaps" /></div>
+        <div class="my-6"><RecentComments /></div>
         <div v-if="$auth.user.data.group === 'Admin'">
           <div><RecentSignups :unverified_users="unverified_users" /></div>
         </div>

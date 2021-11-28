@@ -1,38 +1,33 @@
 <template>
   <main>
-    <h2 class="text-blue-500 font-bold border-b border-blue-500 mt-6">
+    <h2 class="text-blue-300 py-2 font-bold border-b border-blue-500 mt-6">
       #See the recently added Country CAPs:
     </h2>
-    <table class="w-full text-xs">
+    <table class="w-full table-fixed text-xs text-left">
       <thead>
-        <tr class="bg-gray-200 text-gray-900 p-2 rounded-tl-md rounded-tr-md">
-          <td class="w-1/5">Sn</td>
-          <td class="w-1/5">Date</td>
-          <td class="w-1/5">Country</td>
-          <td class="w-1/5">CAPS</td>
-          <td class="w-1/5">#</td>
+        <tr class="bg-gray-600 text-gray-100 rounded-tl-md rounded-tr-md">
+          <th class="w-2/12 p-2">Date</th>
+          <th class="w-3/12 p-2">Country</th>
+          <th class="w-6/12 p-2">CAP</th>
+          <th class="w-1/12 p-2"></th>
         </tr>
       </thead>
-      <tbody v-for="(cap, index) in lastestcaps" v-bind:key="cap.id">
-        <tr class="p-4">
-          <td class="text-gray-500 w-1/5">{{ index + 1 }}</td>
-          <td class="w-1/5">{{ cap.created_at }}</td>
-          <td class="w-1/5">{{ cap.country_name }}</td>
-          <td class="w-1/5">{{ cap.climate_goal }}</td>
-          <td class="w-1/5">
-            <button
-              @click="showCaps(cap.country_name)"
-              class="
-                bg-green-400
-                py-1
-                px-2
-                text-black
-                rounded-md
-                hover:bg-green-100
-              "
-            >
-              View
-            </button>
+      <tbody>
+        <tr
+          class="bg-gray-100 hover:bg-green-50 cursor-pointer"
+          v-for="cap in lastestcaps"
+          v-bind:key="cap.id"
+          @click="showCaps(cap.country_name)"
+        >
+          <td class="overflow-ellipsis overflow-hidden p-2">
+            {{ cap.created_at }}
+          </td>
+          <td class="overflow-ellipsis overflow-hidden p-2">
+            {{ cap.country_name }}
+          </td>
+          <td class="p-2">{{ cap.climate_goal }}</td>
+          <td class="p-2 text-blue-700">
+            <i class="fas fa-angle-double-right"></i>
           </td>
         </tr>
       </tbody>
@@ -64,7 +59,6 @@ export default {
 
 <style scoped>
 td {
-  padding: 8px 2px;
   border-bottom: 1px solid #eeeeee;
 }
 </style>

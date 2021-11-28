@@ -713,7 +713,7 @@ export default {
         this.isLoading = false;
         this.alert = e.response
           ? e.response.data.error
-          : "Sorry an error occured, check your internet";
+          : "Sorry a server side error occured!";
         console.log(e.message);
       }
     },

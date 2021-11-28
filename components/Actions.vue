@@ -1,17 +1,15 @@
 <template>
   <main>
     <h2 class="text-blue-500 font-bold border-b border-blue-500">#Actions:</h2>
-    <div class="lg:flex my-2 text-sm">
+    <div class="scrollmenu overflow-x-auto my-2 text-sm py-2">
       <button
         class="
           bg-blue-800
           text-white
-          mx-2
+          mr-2
           p-2
           rounded-md
           hover:bg-blue-400
-          block
-          md:inline-block
           mb-3
           md:mb-0
         "
@@ -22,28 +20,24 @@
         class="
           bg-blue-800
           text-white
-          mx-2
+          mr-2
           p-2
           rounded-md
           hover:bg-blue-400
-          block
-          md:inline-block
           mb-3
           md:mb-0
         "
       >
-        Add Update</button
-      >
+        Add Update
+      </button>
       <button
         class="
           bg-blue-800
           text-white
-          mx-2
+          mr-2
           p-2
           rounded-md
           hover:bg-blue-400
-          block
-          md:inline-block
           mb-3
           md:mb-0
         "
@@ -54,12 +48,10 @@
         class="
           bg-blue-800
           text-white
-          mx-2
+          mr-2
           p-2
           rounded-md
           hover:bg-blue-400
-          block
-          md:inline-block
           mb-3
           md:mb-0
         "
@@ -71,12 +63,10 @@
         class="
           bg-blue-800
           text-white
-          mx-2
+          mr-2
           p-2
           rounded-md
           hover:bg-blue-400
-          block
-          md:inline-block
           mb-3
           md:mb-0
         "
@@ -98,4 +88,14 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="css" scoped>
+div.scrollmenu {
+  overflow: auto;
+  white-space: nowrap;
+}
+
+div.scrollmenu button {
+  display: inline-block;
+  text-align: center;
+}
+</style>
