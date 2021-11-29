@@ -45,7 +45,7 @@
           <div>
             <select
               v-model="country_name"
-              class="w-full border rounded-md h-9 px-2"
+              class="w-full border rounded-md h-9 px-2 bg-white"
             >
               <option value="" disabled selected>Country</option>
               <option value="Afganistan">Afghanistan</option>
@@ -421,7 +421,7 @@ export default {
       const data = {
         country_name: this.country_name,
         climate_goal: this.climate_goal,
-        posted_by: "Moses",
+        posted_by: "Admin",
         img: img,
       };
       try {

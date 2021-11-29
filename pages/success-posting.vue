@@ -23,22 +23,6 @@
 // import axios from 'axios';
 export default {
   middleware: "auth",
-  methods: {},
-  async asyncData({ $axios }) {
-    const URL = $axios.defaults.baseURL;
-    let [
-      unverifiedusersRes,
-      // brandstatsRes,
-      // budgetstatsRes,
-      // categorystatsRes,
-      // userRes,
-    ] = await Promise.all([$axios.$get(URL + "/auth/all_unverified_users")]);
-    let unverified_userss = unverifiedusersRes.unverified_users;
-    // console.log(unverified_userss);
-    return {
-      unverified_users: unverified_userss,
-    };
-  },
 };
 </script>
 
